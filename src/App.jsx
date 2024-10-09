@@ -1,15 +1,16 @@
-import { useState } from "react";
 import TopBar from "./components/topbar/TopBar";
 import Home from "./pages/home/Home";
+import Single from "./pages/single/Single";
+import Write from "./pages/write/Write";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       
       <TopBar />
-      <Home />
+      {/* <Home /> */}
+      {/* <Single /> */}
+      <Write/>
     </>
   );
 }
