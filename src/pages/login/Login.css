@@ -1,0 +1,78 @@
+.login {
+  height: calc(100vh - 50px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url(https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-size: cover;
+}
+
+.loginCard {
+  font-family: "Josefin Sans", serif;
+  width: 28%;
+  height: 65%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fefefe;
+  border-radius: 20px;
+  box-shadow: 0px 10px 90px #00000099;
+}
+
+.loginTitle {
+  font-size: 50px;
+  font-weight: 600;
+  /* font-weight: bold; */
+  /* color: white; */
+  /* text-align: center; */
+  /* margin-bottom: 30px; */
+}
+
+.loginForm {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+}
+
+.loginForm > label {
+  margin: 10px 0;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.loginInput {
+  padding: 10px;
+  background-color: #fff;
+  width: 90%;
+  margin: auto;
+  border: none;
+  outline: none;
+  /* border-radius: 10px; */
+}
+
+.loginButton {
+  width: 70%;
+  font-weight: 700;
+  margin: 10px auto;
+  cursor: pointer;
+  background-color: lightcoral;
+  border: none;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.loginRegisterButton {
+  position: absolute;
+  top: 60px;
+  right: 40px;
+  background-color: teal;
+  padding: 10px 20px;
+  border: none;
+  color: #fff;
+  border-radius: 10px;
+  cursor: pointer;
+}
