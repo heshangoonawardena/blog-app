@@ -3,7 +3,7 @@ const User = require("../models/User");
 const bcrypt = require('bcrypt');
 
 
-// Register a new user
+// REGISTER
 router.post('/register', async (req, res) => {
   try {
 
@@ -24,7 +24,7 @@ router.post('/register', async (req, res) => {
   }
 });
 
-// Login an existing user
+// LOGIN
 
 router.post('/login', async (req, res) => {
   try {
