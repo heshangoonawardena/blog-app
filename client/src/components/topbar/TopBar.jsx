@@ -93,7 +93,9 @@ const TopBar = () => {
             </li>
           </ul>
         )}
-        <FaSearch className="topSearchIcon" />
+        <Link className="link" to="/">
+          <FaSearch className="topSearchIcon" />
+        </Link>
       </div>
     </div>
   );
