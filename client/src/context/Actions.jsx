@@ -18,3 +18,7 @@ export const LOGOUT = () => ({
 export const userUpdate = () => ({
   type: "USER_UPDATE",
 });
+
+export const deleteUser = () => ({
+  type: "USER_DELETE",
+})
