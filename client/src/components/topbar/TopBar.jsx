@@ -8,16 +8,40 @@ import {
 
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { Context } from "../../context/Context";
 
 const TopBar = () => {
-  const user = true;
+  const handleLogout = () => {
+    dispatch({ type: "LOGOUT" });
+  };
+
+  const PF = "http://localhost:5000/images/";
+  const { user, dispatch } = useContext(Context);
   return (
     <div className="top">
       <div className="topLeft">
-        <FaSquareFacebook className="topIcon" />
-        <FaInstagram className="topIcon" />
-        <FaGithub className="topIcon" />
-        <FaLinkedin className="topIcon" />
+        <a
+          target="_blank"
+          href="https://www.facebook.com/people/Heshan-Goonawardena/pfbid02dTXp4cgNELqsuww3paCAJX8vqUae8P53wrsyQf1np7vnof7wDu531nPyf2KmqtXkl/"
+        >
+          <FaSquareFacebook className="topIcon" />
+        </a>
+        <a
+          target="_blank"
+          href="https://www.instagram.com/heshan.goonawardena/"
+        >
+          <FaInstagram className="topIcon" />
+        </a>
+        <a target="_blank" href="https://github.com/heshangoonawardena">
+          <FaGithub className="topIcon" />
+        </a>
+        <a
+          target="_blank"
+          href="https://www.linkedin.com/in/heshan-goonawardena-037851184/"
+        >
+          <FaLinkedin className="topIcon" />
+        </a>
       </div>
       <div className="topCenter">
         <ul className="topList">
@@ -41,22 +65,20 @@ const TopBar = () => {
               WRITE
             </Link>
           </li>
-          <li className="topListItem">
-            <Link className="link" to="/login">
-              {user && "LOGOUT"}
-            </Link>
+          <li className="topListItem" onClick={handleLogout}>
+            {user && "LOGOUT"}
           </li>
         </ul>
       </div>
       <div className="topRight">
         {user ? (
-          <Link className="link" to='/settings'>
-          <img
-            className="topImg"
-            src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D"
-            alt="profile-picture"
+          <Link className="link" to="/settings">
+            <img
+              className="topImg"
+              src={user?.profilePic && `${PF}${user.profilePic}`}
+              alt="profile-picture"
             />
-            </Link>
+          </Link>
         ) : (
           <ul className="topList">
             <li className="topListItem">
@@ -71,7 +93,9 @@ const TopBar = () => {
             </li>
           </ul>
         )}
-        <FaSearch className="topSearchIcon" />
+        <Link className="link" to="/">
+          <FaSearch className="topSearchIcon" />
+        </Link>
       </div>
     </div>
   );
