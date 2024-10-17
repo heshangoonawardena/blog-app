@@ -32,12 +32,9 @@ const SinglePost = () => {
       await axios.delete(`/api/posts/${path}`, {
         data: { username: user.username },
       });
-      
-      
-
       window.location.replace("/");
     } catch (err) {
-      console.log(err);
+      console.log("Error deleting post", err);
     }
   };
 
@@ -49,9 +46,8 @@ const SinglePost = () => {
         username: user.username,
       });
       setUpdateMode(false);
-      // window.location.reload();
     } catch (err) {
-      console.log(err);
+      console.error("Error updating post", err);
     }
   };
 
@@ -61,7 +57,7 @@ const SinglePost = () => {
         <img
           className="singlePostImg"
           src={
-            post.photo
+            post?.photo
               ? `${PF}${post.photo}`
               : "https://images.unsplash.com/photo-1682687218608-5e2522b04673?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8c2NlbmVyeXxlbnwwfHwwfHx8MA%3D%3D"
           }

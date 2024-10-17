@@ -12,8 +12,13 @@ const Home = () => {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const res = await axios.get(`/api/posts${search}`);
-      setPosts(res.data);
+      try {
+        const res = await axios.get(`/api/posts${search}`);
+        setPosts(res.data);
+      } catch (error) {
+        console.error("Error fetching posts",error);
+        
+      }
     };
     fetchPosts();
   }, [search]);

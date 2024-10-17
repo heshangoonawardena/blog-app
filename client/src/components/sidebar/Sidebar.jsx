@@ -15,8 +15,12 @@ const Sidebar = () => {
 
   useEffect(() => {
     const fetchCats = async () => {
-      const res = await axios.get("/api/categories");
-      setCats(res.data);
+      try {
+        const res = await axios.get("/api/categories");
+        setCats(res.data);
+      } catch (error) {
+        console.error("Error fetching categories", error);
+      }
     };
     fetchCats();
   }, []);
